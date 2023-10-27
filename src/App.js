@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
+import Login from './Login';
+// import Signup from './Signup';
+
 
 function App() {
   return (
+
     <div className="app">
-      <h1>Welcome to Auth App</h1>
+      
+      <Login />
+      {/* <Signup /> */}
+
     </div>
   );
 }
