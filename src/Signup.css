@@ -1,0 +1,108 @@
+
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+   
+}
+
+.signup-page > form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem; 
+    max-width: 32rem;
+    
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-container > .icon {
+    margin-right: 5px; /* Add space between icon and input */
+    color: #828282;
+  }
+  
+  .input-container > input {
+    border: none;
+    outline: none;
+    flex: 1;
+    
+  }
+
+.logo > img {
+    width: 45px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+.logo {
+    display: flex;
+}
+form > h1 {
+    font-size: 15px;
+    font-family: monospace;
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form > p {
+    text-align: left;
+}
+form > button {
+    color: white;
+    font-size: 15px;
+    font-style: bold;
+    font-family: monospace;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #3282CE;
+    cursor: pointer;
+}
+
+form > button:hover {
+    background-color: #2A6DB0
+}
+
+.social-btn {
+    align-items: center;
+    color: #828282;
+    justify-content: space-between;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    border-top: #fff;
+    height: 40px;
+    width: 40px;
+}
+
+.social-btn:hover {
+    cursor: pointer;
+}
+
+ p {
+    margin: 10px;
+}
+
+/* will try later to specify the class name for the a tag */
+a {
+    text-decoration: none;
+    color: #3282CE;
+    font-size: 15px;
+    cursor: pointer;
+}
+
