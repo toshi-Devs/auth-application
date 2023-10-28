@@ -3,11 +3,12 @@ import './Signup.css'
 
 function Signup() {
   return (
-    <div className="header">
+    <div className="signup-page">
       
+        
+        <form className='signup-form'>
         <h1>Sign Up</h1>
-        <form>
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <input type="password" placeholder="Confirm Password" />
           <input type="submit" value="Sign Up" />
