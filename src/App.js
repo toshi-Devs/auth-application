@@ -3,10 +3,12 @@ import './App.css';
 import Login from './Login';
 import Signup from './Signup';
 import Home from './Home'; // Import the Home component
+import { useAuth } from './context/AuthContext';
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
   const [userLoggedIn, setUserLoggedIn] = useState(false); // State variable to track user login status
+  const { currentUser } = useAuth();
 
   const toggleForm = () => {
     setShowLogin(!showLogin);
@@ -18,7 +20,16 @@ function App() {
 
   return (
     <div className="app">
-      <Home />
+      {currentUser ? (
+        <Home />
+      ) : showLogin ? (
+        <Login toggleForm={toggleForm} onUserLogin={handleUserLogin} />
+      ) : (
+        <Signup toggleForm={toggleForm} onUserLogin={handleUserLogin} />
+      )}
+
+      {/* <Home /> */}
+      {/* <Login /> */}
       {/* {userLoggedIn ? (
         <Home /> // Render the Home component when the user is logged in
       ) : showLogin ? (
