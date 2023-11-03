@@ -33,7 +33,11 @@ const Home = () => {
       <p>Email: {currentUser.email}</p>
       <p>UID: {currentUser.uid}</p>
       <p>Password: *********</p>
-      <button onClick={handleSignOut}>Sign Out</button>
+      <div className='buttons-container'>
+      <button id='edit-btn'> Edit</button>
+      <button id='signout-btn' onClick={handleSignOut}>Sign Out</button>
+      </div>
+      
       </div>
     </div>
     
