@@ -18,11 +18,13 @@ const Home = () => {
 
   return (
     <div className='home-page'>
-      <h1> You are logged in!</h1>
+      
       <div className='user-info'>
       <img src={photo} alt={currentUser.displayName} />
       <p>Display Name: {currentUser.displayName}</p>
       <p>Email: {currentUser.email}</p>
+      <p>UID: {currentUser.uid}</p>
+      <p>Password: *********</p>
       <button >Sign Out</button>
       </div>
     </div>
