@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { auth } from './firebase';
 
 
-function Signup( {toggleForm}) {
+function Signup( {toggleForm, onUserLogin}) {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,7 +26,7 @@ function Signup( {toggleForm}) {
         email: auth.user.email,
         uid: auth.user.uid,
       })
-      
+      onUserLogin(); // Call onUserLogin callback prop
     })
     .catch(error => alert(error.message))
   }

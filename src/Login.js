@@ -8,7 +8,7 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useState } from 'react';
 import { auth } from './firebase';
 
-function Login( {toggleForm}) {
+function Login( {toggleForm, onUserLogin}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
@@ -20,6 +20,7 @@ function Login( {toggleForm}) {
                 email: auth.user.email,
                 uid: auth.user.uid,
               })
+            onUserLogin(); // Call onUserLogin callback prop
             console.log(auth);
             })
             .catch(error => alert(error.message))
