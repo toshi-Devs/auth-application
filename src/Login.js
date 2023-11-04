@@ -6,7 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InboxIcon from '@mui/icons-material/Inbox';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useState } from 'react';
-import { auth } from './firebase';
+import { auth, githubProvider } from './firebase';
 
 function Login( {toggleForm, onUserLogin}) {
     const [email, setEmail] = useState('');
@@ -25,6 +25,13 @@ function Login( {toggleForm, onUserLogin}) {
             })
             .catch(error => alert(error.message))
         }
+      const onGithubSignIn = () => {
+        auth.signInWithPopup(githubProvider)
+        .then((auth) => {
+          onUserLogin(); // Call onUserLogin callback prop
+        })
+        .catch(error => alert(error.message))
+      }
   return (
     <div className='login-page'>
         
@@ -59,9 +66,12 @@ function Login( {toggleForm, onUserLogin}) {
 
     <div className='social-media'>
         <p>Or continue with these social profile</p>
-        <button href='#' className='social-btn'><FacebookIcon /></button>
-        <button href='#' className='social-btn'><GitHubIcon /></button>
-        <button href='#' className='social-btn'><LinkedInIcon/></button>
+        <button href='#' 
+        className='social-btn'><FacebookIcon /></button>
+        <button onClick={onGithubSignIn}
+        className='social-btn'><GitHubIcon /></button>
+        <button href='#' 
+        className='social-btn'><LinkedInIcon/></button>
 
         </div>
 

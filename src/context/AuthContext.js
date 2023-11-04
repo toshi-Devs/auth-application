@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth } from '../firebase';
+import { auth, githubProvider } from '../firebase';
 import { useState, useEffect, useContext } from 'react';
 
 
@@ -29,6 +29,11 @@ import { useState, useEffect, useContext } from 'react';
     }
     function updateDisplayName(displayName) {
       return currentUser.updateProfile({ displayName });
+    }
+    function GitHubAuth() {
+      var provider = githubProvider;
+      auth.useDeviceLanguage();
+      return auth.signInWithPopup(provider);
     }
   
     useEffect(() => {

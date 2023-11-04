@@ -12,9 +12,10 @@ const Home = () => {
   const handleSignOut = () => {
     // Call the signOut method from the firebase.auth() object
     auth.signOut();
-    <Login />
+    // <Login />
   }
 
+  
   if (!currentUser) {
     // Add a check to ensure currentUser is defined before rendering
     return (
