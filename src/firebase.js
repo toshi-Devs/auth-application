@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-import { GithubAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -20,5 +20,7 @@ const firebaseConfig = {
   
 
   export const githubProvider = new GithubAuthProvider();  
+  export const googleProvider = new GoogleAuthProvider();
+  export const facebookProvider = new FacebookAuthProvider();
 
   export { db, auth };

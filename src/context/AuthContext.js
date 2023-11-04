@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth, githubProvider } from '../firebase';
+import { auth, githubProvider, googleProvider, facebookProvider } from '../firebase';
 import { useState, useEffect, useContext } from 'react';
 
 
@@ -35,6 +35,16 @@ import { useState, useEffect, useContext } from 'react';
       auth.useDeviceLanguage();
       return auth.signInWithPopup(provider);
     }
+    function GoogleAuth() {
+      var provider = googleProvider;
+      auth.useDeviceLanguage();
+      return auth.signInWithPopup(provider);
+    }
+    function FacebookAuth() {
+      var provider = facebookProvider;
+      auth.useDeviceLanguage();
+      return auth.signInWithPopup(provider);
+    }
   
     useEffect(() => {
       auth.onAuthStateChanged(setCurrentUser);
@@ -47,6 +57,9 @@ import { useState, useEffect, useContext } from 'react';
       updateEmail,
       updatePassword,
       updateDisplayName,
+      GitHubAuth,
+      GoogleAuth,
+      FacebookAuth
     };
 
     return (

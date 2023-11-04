@@ -1,13 +1,13 @@
 import React from 'react'
 import './Signup.css'
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InboxIcon from '@mui/icons-material/Inbox';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import CheckIcon from '@mui/icons-material/Check';
 import { useState } from 'react';
-import { auth, githubProvider } from './firebase';
+import { auth, githubProvider, googleProvider, facebookProvider } from './firebase';
 
 
 function Signup( {toggleForm, onUserLogin}) {
@@ -37,6 +37,20 @@ function Signup( {toggleForm, onUserLogin}) {
     })
     .catch(error => alert(error.message))
   }
+  const onGoogleSignIn = () => {
+    auth.signInWithPopup(googleProvider)
+    .then((auth) => {
+      onUserLogin(); // Call onUserLogin callback prop
+    })
+    .catch(error => alert(error.message))
+    }
+  const onFacebookSignIn = () => {
+    auth.signInWithPopup(facebookProvider)
+    .then((auth) => {
+      onUserLogin(); // Call onUserLogin callback prop
+    })
+    .catch(error => alert(error.message))
+    }
   
 
   return (
@@ -82,12 +96,12 @@ function Signup( {toggleForm, onUserLogin}) {
       </form>
       <div className='social-media'>
         <p>Or continue with these social profile</p>
-        <button href='#' 
+        <button onClick={onFacebookSignIn}
         className='social-btn'><FacebookIcon /></button>
         <button onClick={onGithubSignIn}
         className='social-btn'><GitHubIcon /></button>
-        <button href='#' 
-        className='social-btn'><LinkedInIcon/></button>
+        <button onClick={onGoogleSignIn}
+        className='social-btn'><GoogleIcon /></button>
 
         </div>
 

@@ -2,7 +2,6 @@ import React from 'react';
 import './Home.css';
 import { useAuth } from './context/AuthContext';
 import { auth } from './firebase';
-import Login from './Login';
 
 
 const Home = () => {

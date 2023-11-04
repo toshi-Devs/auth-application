@@ -1,12 +1,12 @@
 import React from 'react'
 import './Login.css'
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InboxIcon from '@mui/icons-material/Inbox';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import { useState } from 'react';
-import { auth, githubProvider } from './firebase';
+import { auth, githubProvider, googleProvider, facebookProvider } from './firebase';
 
 function Login( {toggleForm, onUserLogin}) {
     const [email, setEmail] = useState('');
@@ -32,6 +32,21 @@ function Login( {toggleForm, onUserLogin}) {
         })
         .catch(error => alert(error.message))
       }
+      const onGoogleSignIn = () => {
+        auth.signInWithPopup(googleProvider)
+        .then((auth) => {
+          onUserLogin(); // Call onUserLogin callback prop
+        })
+        .catch(error => alert(error.message))
+        }
+      const onFacebookSignIn = () => {
+          auth.signInWithPopup(facebookProvider)
+          .then((auth) => {
+            onUserLogin(); // Call onUserLogin callback prop
+          })
+          .catch(error => alert(error.message))
+          }
+
   return (
     <div className='login-page'>
         
@@ -66,12 +81,12 @@ function Login( {toggleForm, onUserLogin}) {
 
     <div className='social-media'>
         <p>Or continue with these social profile</p>
-        <button href='#' 
+        <button onClick={onFacebookSignIn} 
         className='social-btn'><FacebookIcon /></button>
         <button onClick={onGithubSignIn}
         className='social-btn'><GitHubIcon /></button>
-        <button href='#' 
-        className='social-btn'><LinkedInIcon/></button>
+        <button onClick={onGoogleSignIn}
+        className='social-btn'><GoogleIcon /></button>
 
         </div>
 
@@ -85,4 +100,4 @@ function Login( {toggleForm, onUserLogin}) {
   )
 }
 
-export default Login
+export default Login;
