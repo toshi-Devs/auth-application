@@ -16,14 +16,14 @@ function App() {
 
   return (
     <div className="app">
-      <Edit />
-      {/* {currentUser ? (
+      {/* <Edit /> */}
+      {currentUser ? (
         <Home />
       ) : showLogin ? (
         <Login toggleForm={toggleForm}  />
       ) : (
         <Signup toggleForm={toggleForm}  />
-      )} */}
+      )}
 
     </div>
   );

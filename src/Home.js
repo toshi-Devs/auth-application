@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 import { useAuth } from './context/AuthContext';
 import { auth } from './firebase';
+import Edit from './Edit';
 
 
 const Home = () => {
@@ -13,6 +14,12 @@ const Home = () => {
     // Call the signOut method from the firebase.auth() object
     auth.signOut();
     // <Login />
+  }
+
+  const handleEdit = () => {
+    // Call the signOut method from the firebase.auth() object
+    <Edit />
+    
   }
 
   
@@ -69,7 +76,8 @@ const Home = () => {
       </div>
       
       <div className='buttons-container'>
-      <button id='edit-btn'> Edit</button>
+      <button id='edit-btn'
+              onClick={handleEdit}> Edit</button>
       </div>
       
       </div>
