@@ -3,6 +3,7 @@ import './Edit.css';
 import {auth} from './firebase';
 import { useAuth } from './context/AuthContext';
 import { useState } from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Edit() {
     const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Faze_Clan.svg/1200px-Faze_Clan.svg.png";
@@ -26,7 +27,12 @@ function Edit() {
             <button id='signout-btn' onClick={handleSignOut}>Sign Out</button>
             </div>
       </div>
+      
       <div className='edit-form'>
+        <div className='back-icon'>
+        <ArrowBackIcon/>
+        <p>Back</p>
+        </div>
         <div className='edit-form-header'>
           <h1>Change Info</h1>
           <p>Changes will be reflected to every services</p>
@@ -40,19 +46,25 @@ function Edit() {
           </div>
         <div className='edit-form-body'>
             <h2>Name</h2>
-            <input type='text' placeholder='Enter your name...' />
+            <input type='text' 
+            defaultValue={currentUser.displayName}
+            placeholder='Enter your name...' />
         </div>
         <div className='edit-form-body'>
             <h2>Email</h2>
-            <input type='text' placeholder='Enter your email...' />
+            <input type='text'
+            defaultValue={currentUser.email} 
+            placeholder='Enter your email...' />
         </div>
         <div className='edit-form-body'>
             <h2>Phone</h2>
-            <input type='text' placeholder='Enter your phone...' />
+            <input type='text' 
+            placeholder='Add your phone number..' />
         </div>
         <div className='edit-form-body'>
             <h2>Password</h2>
-            <input type='text' placeholder='Leave blank to keep the same' />
+            <input type='text' 
+            placeholder='Leave blank to keep the same' />
         </div>
 
         <div className='buttons-container'>
