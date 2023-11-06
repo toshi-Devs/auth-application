@@ -28,7 +28,7 @@ function Edit() {
       </div>
       <div className='edit-form'>
         <div className='edit-form-header'>
-          <h1>Edit Profile</h1>
+          <h1>Change Info</h1>
           <p>Changes will be reflected to every services</p>
         </div>
         <div className='edit-form-image'>

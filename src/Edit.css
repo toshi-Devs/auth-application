@@ -51,17 +51,24 @@
 .edit-form-header {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
+    /* align-items: left;
+    justify-content: left; */
     margin-left: 20px;
     margin-top: 15px;
     margin-bottom: 10px;
 }
 
+.edit-form-header > h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
 .edit-form-image {
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-left: 20px;
     margin-bottom: 20px;
     padding-top: 6px;
     padding-right: 8px;
@@ -105,7 +112,8 @@
     
     border: 1px solid #718096; /* Use the desired gray color */
   border-radius: 0.75rem; /* Adjust the radius as needed */
-  width: 40%;
+  width: 50%;
+  height: 40px;
   padding: 0.5rem; /* 2 in rem units */
   padding-left: 0.75rem; /* 3 in rem units */
   padding-right: 0.75rem; /* 3 in rem units */
