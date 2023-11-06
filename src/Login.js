@@ -20,30 +20,30 @@ function Login( {toggleForm, onUserLogin}) {
                 email: auth.user.email,
                 uid: auth.user.uid,
               })
-            onUserLogin(); // Call onUserLogin callback prop
+            // onUserLogin(); // Call onUserLogin callback prop
             console.log(auth);
             })
             .catch(error => alert(error.message))
         }
       const onGithubSignIn = () => {
         auth.signInWithPopup(githubProvider)
-        .then((auth) => {
-          onUserLogin(); // Call onUserLogin callback prop
-        })
+        // .then((auth) => {
+        //   onUserLogin(); // Call onUserLogin callback prop
+        // })
         .catch(error => alert(error.message))
       }
       const onGoogleSignIn = () => {
         auth.signInWithPopup(googleProvider)
-        .then((auth) => {
-          onUserLogin(); // Call onUserLogin callback prop
-        })
+        // .then((auth) => {
+        //   onUserLogin(); // Call onUserLogin callback prop
+        // })
         .catch(error => alert(error.message))
         }
       const onFacebookSignIn = () => {
           auth.signInWithPopup(facebookProvider)
-          .then((auth) => {
-            onUserLogin(); // Call onUserLogin callback prop
-          })
+          // .then((auth) => {
+          //   onUserLogin(); // Call onUserLogin callback prop
+          // })
           .catch(error => alert(error.message))
           }
 
