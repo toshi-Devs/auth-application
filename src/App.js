@@ -4,6 +4,7 @@ import Login from './Login';
 import Signup from './Signup';
 import Home from './Home'; // Import the Home component
 import { useAuth } from './context/AuthContext';
+import Edit from './Edit';
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
@@ -15,13 +16,14 @@ function App() {
 
   return (
     <div className="app">
-      {currentUser ? (
+      <Edit />
+      {/* {currentUser ? (
         <Home />
       ) : showLogin ? (
         <Login toggleForm={toggleForm}  />
       ) : (
         <Signup toggleForm={toggleForm}  />
-      )}
+      )} */}
 
     </div>
   );
